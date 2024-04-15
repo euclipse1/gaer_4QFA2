@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<script>
+function timesTable() {
+    var start = parseInt(document.getElementById("start").value);
+    var end = parseInt(document.getElementById("end").value);
+
+    if (isNaN(start) || isNaN(end) || start < 2 || end < 2 || start > 10 || end > 10) {
+        alert("Please enter numbers between 2 and 10 only.");
+        return;
+    }
+
+    var table = "";
+    for (var a = 1; a <= start; a++){
+    for (var b = 1; b <= end; b++){
+        table += "<td>" + (a * b) + "</td>";
+    }
+    table+= "<tr>";
+    }
+document.getElementById("mulTable").innerHTML = "<table border='1'><tr>" + table + "</tr></table>";
+
+}
+</script>
+</head>
+<body>
+
+<p>[Enter numbers between 2 and 10]</p>
+<input type="number" id="start" placeholder="Start"> by
+<input type="number" id="end" placeholder="End">
+<br>
+<br>
+<button onclick="timesTable()">Click here when ready!</button>
+<br>
+<br>
+<div id="mulTable"></div>
+</body>
+</html>
